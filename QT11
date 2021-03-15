@@ -1,0 +1,46 @@
+1.	Tìm kiếm chính xác:
+Một công thức cơ bản và phổ biến nhất mà gần như ai cũng biết, đó là sử dụng dấu ngoặc kép để tìm chính xác thông tin cần thiết. Ví dụ, nếu thực hiện yêu cầu tìm kiếm như dưới đây thì hệ thống sẽ trả về các trang web có chứa từ Hello và từ Word: 
+“Hello world”.
+Tiếp theo là một cách tương tự như trên cũng hoạt động tốt với lệnh query để tìm kiếm chính xác từng từ, ví dụ: nếu bạn muốn tìm thông tin “mining,” thì Google đồng thời sẽ trả về những trang web có chứa từ “miners.” Trước kia thì chúng ta phải thêm dấu cộng ở đằng trước để tìm +mining, nhưng bây giờ chỉ cần đặt từ cần tìm kiếm trong dấu ngoặc kép mà thôi.
+“mining”
+2. Loại trừ từ khóa:
+Bên cạnh đó, khi bạn thêm dấu trừ vào phía trước 1 từ bất kỳ trong chuỗi thông tin tìm kiếm thì hệ thống sẽ loại bỏ tất cả các kết quả có chứa từ đó. Ví dụ: nếu muốn tìm kiếm các trang cung cấp thông tin về Linux distribution mà không có liên quan gì đến Ubuntu thì các bạn nhập từ khóa như sau:
+linux distributions -ubuntu
+
+3. Tìm trên Site nhất định:
+Toán tử site: cho phép người dùng tìm toàn bộ thông tin cần thiết trên 1 trang cố định nào đó. Chẳng hạn: nếu muốn tìm thông tin về Windows 7 trên Quản Trị Mạng thì các bạn hãy gõ từ khóa như sau:
+site:quantrimang.com.vn windows 7
+
+Bên cạnh đó, chúng ta cũng có thể áp dụng cách này trên 1 domain bất kỳ. Chẳng hạn khi cần tìm các bài viết, đường dẫn có chất lượng thì nên chú tâm vào những tên miền có đuôi edu, như site:.edu để “đẩy” các kết quả từ các trang edu đó lên đầu.
+4. Các từ ngữ có liên quan:
+Ngược lại với ý kiến ở phần 2, các bạn hãy sử dụng dấu ~ để tìm tất cả các từ ngữ có liên quan đến từ khóa nhập vào, bên cạnh chính bản thân keyword đó. Ví dụ: khi gõ ~geek thì chúng ta sẽ nhận được rất nhiều kết quả với nhiều từ có liên quan với từ geek:
+
+Theo như trên thì Linux chính là từ “gần gũi” nhất với geek, tiếp theo là Greek, và sau đó là Nerd.
+5. Ký tự đặc biệt:
+Dấu hoa thị được sử dụng trong trường hợp người dùng muốn tìm kiếm nhiều thông tin trùng khớp với bất kỳ từ khóa nào. Ví dụ: nếu muốn biết Google đã bỏ ra bao nhiêu tiền trong việc mua và bán trong thời gian qua, các bạn hãy gõ:
+“google purchased * for * dollars”
+
+6. Giới hạn trong khoảng thời gian:
+1 thủ thuật nữa rất hay mà lại ít người để ý tới, đó là tìm trong 1 khoảng thời gian có giới hạn. Ví dụ: nếu muốn tìm kiếm dữ liệu, thông tin về Ubuntu từ năm 2008 cho tới 2010 thì nhập nội dung từ khóa như sau:
+ubuntu 2008..2010
+
+7. Tìm theo định dạng file:
+Thông số filetype: cho phép người dùng dễ dàng tìm kiếm bất kỳ định dạng tài liệu nào. Chẳng hạn, nếu muốn tìm tất cả các file PDF trên trang download.com.vn thì gõ:
+
+8. Sử dụng OR:
+Tham số OR có tác dụng tìm kiếm bất kỳ kết quả nào có liên quan tới 1 trong 2 thuật ngữ trước và sau OR. Ví dụ như sau:
+ubuntu OR linux
+
+Hệ thống sẽ liệt kê tất cả các trang có chứa từ Ubuntu hoặc Linux. Lưu ý rằng OR bắt buộc phải viết hoa.
+9. Định nghĩa theo từ:
+Rất đơn giản và dễ dàng, nếu muốn tìm nghĩa của 1 từ nào đó thì các bạn chỉ cần gõ từ khóa theo cú pháp chung như sau:
+define:word
+
+10. Tính toán:
+Thay vì việc phải dùng Google để tìm kiếm những tiện ích trực tuyến, ứng dụng hỗ trợ để thực hiện phép tính, thì chúng ta chỉ cần sử dụng những ký tự và công thức toán học thông thường ngay trên Google. Ví dụ như sau:
+(4 + 2) * (6 / 3)
+
+11. Chuyển đổi đơn vị:
+Tương tự như trên, đây là 1 trong nhiều chức năng thú vị nhất của Google tính cho tới thời điểm hiện tại, đó là chuyển đổi giữa nhiều đơn vị khác nhau. Chỉ cần nhập nội dung tương ứng dựa theo công thức: “X [units] in [units]”
+6 inches in cm
+
