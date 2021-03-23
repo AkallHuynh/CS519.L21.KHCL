@@ -19,6 +19,8 @@
 
 % Use the following line for the initial blind version submitted for review:
 \usepackage{icml2021}
+\usepackage{multicol,lipsum}
+
 
 % If accepted, instead use the following line for the camera-ready submission:
 %\usepackage[accepted]{icml2021}
@@ -38,12 +40,17 @@ Using Context-Dependent Deep Neural Networks}
 \icmlsetsymbol{equal}{*}
 
 \begin{icmlauthorlist}
-\icmlauthor{Aeiau Zzzz}{equal,to}
+\icmlauthor{Dong Yu}{msusa}
+\icmlauthor{Frank Seide}{msbej}
+\icmlauthor{Gang Li}{msbej}
 \end{icmlauthorlist}
 
+\icmlaffiliation{msusa}{Microsoft Research, Redmond, USA}
+\icmlaffiliation{msbej}{Microsoft Research Asia, Beijing, P.R.C.}
 
-\icmlcorrespondingauthor{Cieua Vvvvv}{c.vvvvv@googol.com}
-\icmlcorrespondingauthor{Eee Pppp}{ep@eden.co.uk}
+\icmlcorrespondingauthor{Cieua Vvvvv}{dongyu@microsoft.com}
+\icmlcorrespondingauthor{Eee Pppp}{fseide@microsoft.com}
+\icmlcorrespondingauthor{Eee Pppp}{ganl@microsoft.com}
 
 % You may provide any keywords that you
 % find helpful for describing your paper; these are used to populate
@@ -85,6 +92,22 @@ publicly available benchmark of phone-call transcription (Switchboard 2000 NIST 
 
 \section{The Context-Dependent Deep
 Neural Network HMM}
+\begin{algorithm}[tb]
+   \caption{CD-DNN-HMM Training Procedure}
+   \label{alg:example}
+\begin{algorithmic}
+   Train conventional CD-GMM-HMM system.
+Get senone-level forced-alignment with that model.
+Convert senone-level alignment into class labels.
+Pretrain a DNN using DBN-pretraining [7].
+Fine-tune DNN using backpropagation [8].
+Convert the CD-GMM-HMM to CD-DNN-HMM by replacing GMMs with DNN classes.
+Get senone-level forced-alignment with that model.
+Convert senone-level alignment into class labels.
+Further fine-tune DNN using backpropagation.
+\end{algorithmic}
+\end{algorithm}
+
 In HMM-based large-vocabulary speech recognition,
 speech is modeled by hidden Markov models (HMMs),
 where each word’s HMM is decomposed into phoneme
@@ -108,20 +131,7 @@ directly. It was long assumed that thousands of triphone states were too many to
 by an MLP, but [1] has shown that it works very well.
 Secondly, we use a deep MLP with with many hidden layers. Many layers of simple non-linearities can 
 model complicated non-linearities and are more efficient in representing structures since lower-layer feature detectors can be reused by the higher-layer feature
-detectors. Also, each layer is constrained by the adjacent layers and so it is less likely to cause over-fitting
-(although it is more likely to cause under-fitting).
-The key enablers to the training of these were the deep
-belief network (DBN) pre-training algorithm proposed
-by Hinton [7], as well as the advent of affordable, massively parallel computing devices (GPGPUs). Algorithm 1 summarizes the training procedure [4]. First,
-a conventional CD-GMM-HMMs is trained. Secondly,
-the DNN, after initialization as a DBN, is trained as a
-frame classifier, where the class labels are state labels
-assigned to each input frame through forced alignment
-using the CD-GMM-HMM. Midway, the alignment is
-updated once using the DNN model.
-
 \onecolumn
-
 \begin{tabular}{ |c|c|c|c|c|c|c } 
  \hline
  acoustic model and training & recognition mode & RT03S & Hub5’00 & voice mails & teleconf \\ 
@@ -138,9 +148,23 @@ CD-GMM 40-mix, SWB 309h & single-pass SI & FSH=27.4 SW=37.6 & 23.6 & 30.8 & 33.9
  \hline
 \end{tabular}
 
+
 \emph{Table 1. Standard CD-GMM-HMM vs. CD-DNN-HMM for single-pass speaker-independent recognition on five speech-to text test sets (word-error rates in $\%$), and for comparison our group’s best-ever CD-GMM-HMM result for three set}.
-\twocolumn
-\\
+\begin{multicols}{2}
+detectors. Also, each layer is constrained by the adjacent layers and so it is less likely to cause over-fitting
+(although it is more likely to cause under-fitting).
+The key enablers to the training of these were the deep
+belief network (DBN) pre-training algorithm proposed
+by Hinton [7], as well as the advent of affordable, massively parallel computing devices (GPGPUs). Algorithm 1 summarizes the training procedure [4]. First,
+a conventional CD-GMM-HMMs is trained. Secondly,
+the DNN, after initialization as a DBN, is trained as a
+frame classifier, where the class labels are state labels
+assigned to each input frame through forced alignment
+using the CD-GMM-HMM. Midway, the alignment is
+updated once using the DNN model.~\ref{alg:example}
+\end{multicols}
+
+\begin{multicols}{2}
 \section{Experimental Results}
 We evaluate the effectiveness of CD-DNN-HMMs on
 speech-to-text transcription of telephone conversations, a considerably difficult task. We use the publicly available 309-hour ‘SWBD-I’ training set and associated benchmark sets, as well as two in-house sets.
@@ -167,43 +191,41 @@ speech-to-text transcription. The remarkable accuracy
 gains are due to three factors: direct modeling of tied
 triphone states through the DNN; effective exploitation of neighbor frames by the DNN; and the efficient
 and effective modeling ability of deeper networks.
-
+\vfill\null
+\columnbreak
 \section*{References}
 
 [1] D. Yu et al., “Roles of Pretraining and Fine-Tuning
 in Context-Dependent DNN-HMMs for Real-World
 Speech Recognition,” Proc. NIPS Workshop on Deep
 Learning and Unsupervised Feature Learning, 2010.
-\\ 
 
 [2] G. Dahl et al., “Context-Dependent Pre-Trained Deep
 Neural Networks for Large Vocabulary Speech Recognition”, IEEE Trans. Speech and Audio Proc., Special
 Issue on Deep Learning for Speech Processing
- \\ \\ \\ \\ \\ \\ \\ \\ \\
 
 [3] S. Renals et al., “Connectionist Probability Estimators in HMM Speech Recognition,” IEEE
 Trans. Speech and Audio Proc., January 1994.
-\\ 
 
 [4] F. Seide, G. Li, and D. Yu, “Conversational Speech
 Transcription Using Context-Dependent Deep Neural
 Networks,” Interspeech, 2011.
-\\
 
 [5] H. Franco et al., “Context-Dependent Connectionist Probabilty Estimatation in a Hybrid Hidden
 Markov Model–Neural Net Speech Recognition System,” Computer Speech and Language, vol. 8, 1994.
-\\
 
 [6] J. Fritsch et al., “ACID/HNN: Clustering Hierarchies
 of Neural Networks for Context-Dependent Connectionist Acoustic Modeling,” Proc. ICASSP, May 1998.
-\\
 
 [7] G. Hinton et al, “A Fast Learning Algorithm for Deep
 Belief Nets”, Neural Computation, vol. 18, 2006.
-\\
 
 [8] D. Rumelhart et al., “Learning Representations By
 Back-Propagating Errors,” Nature, vol. 323, 1986
+\end{multicols}
+\twocolumn
+
+
 
 \bibliographystyle{icml2021}
 
