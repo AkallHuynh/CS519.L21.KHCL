@@ -10,8 +10,8 @@
 - Làm cơ sở thực hiện quyền đối với sáng chế
 - Cơ sở để yêu cầu bảo về quyền đối với sáng chế
 ##### 4. Điều gì sẽ xảy ra nếu không bảo hộ sáng chế cho sản phẩm hay quy trình kỹ thuật của mình?
-- Sản phẩm hoặc quy trình có thể bị người khác đăng kí bảo hộ, từ đó mất đi khả ăng sử dụng chính sáng chế, kĩ thuật do bản thân tạo ra.
-- Sản phẩm hoặc quy trình có thể bị người khác sử dụng để thu lợi mà không phải chịu trách nhiệm về chi phí, dẫn đến bản thân thua thiệt về mặt tài chính.
+- Mất quyền ưu tiên được bảo hộ theo nguyên tắc nộp đơn đầu tiên.
+- Doanh nghiệp có nguy cơ trở thành bên vi phạm quyền sở hữu trí tuệ.
 ##### 5. Giải pháp hữu ích là gì?
 - Giải pháp hữu ích là giải pháp kỹ thuật dưới dạng sản phầm hoặc quy trình nhằm giải quyết một vấn đề xác định bằng việc áp dụng các quy luật tự nhiên.
 ##### 6. Thủ tục đăng ký bảo hộ sáng chế như thế nào?
